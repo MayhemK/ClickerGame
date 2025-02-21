@@ -8,6 +8,13 @@ let snakes = 0
 function hatchEggs() {
   snakes++
   console.log
+  drawSnakes()
+
+}
+
+
+function eatBirds(params) {
+
 }
 
 //!SECTION
@@ -15,5 +22,9 @@ function hatchEggs() {
 
 //SECTION -
 
+function drawSnakes() {
+  const eggCountElem = document.getElementById('snakeCount')
+  eggCountElem.innerText = `Snakes: ${snakes}`
+}
 
 //!SECTION
