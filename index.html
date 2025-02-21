@@ -40,11 +40,123 @@
   </main>
   <footer>
     <div class="container-fluid text-light text-center p-4 text-shadow">
-      <div class="row justify-content-center">
+      <div class="row justify-content-center align-items-end">
+        <div class="col-1">
+          <h4 id="snakeLevel">1 <span class="mdi mdi-cursor-default-click text-"></span></h4>
+        </div>
         <div class="col-4">
           <h1 id="snakeCount">Snakes: 0</h1>
         </div>
+        <div class="col-1">
+          <h4 id="timerLevel"><span class="mdi mdi-timer-sand"></span> 0</h4>
+        </div>
       </div>
+    </div>
+    <div class="container-fluid text-light text-center p-4 text-shadow">
+      <div class="row ">
+        <Section class="col-6">
+          <h2>upgrades</h2>
+          <div class="row ">
+            <div class="col-6">
+              <h4>Click Upgrades</h4>
+            </div>
+            <div class="col-6">
+              <h4>Auto Upgrades</h4>
+            </div>
+          </div>
+        </Section>
+        <Section class="col-6">
+          <h2>Upgrade Levels</h2>
+          <div class="row">
+            <div class="col-6">
+              <h4>Click Upgrade Level</h4>
+            </div>
+            <div class="col-6">
+              <h4>Auto Upgrade Level</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+
+            </div>
+          </div>
+        </Section>
+        <section class="container-fluid">
+          <div class="row align-items-center text-start">
+            <div class="col-3">
+              <div onclick="eatMouse()" class="btn btn-light text-dark">100 🐍
+              </div>
+              <span>Mouse +1</span>
+            </div>
+            <div class="col-3">
+              <div onclick="eatRaccoon()" class="btn btn-light text-dark">1000 🐍
+              </div>
+              <span>Raccoon +10</span>
+            </div>
+            <div class="col-1">
+              <input class="form-control " type="text" readonly>
+
+            </div>
+            <div class="col-1">
+              <h5>Mouse Bonus</h5>
+            </div>
+            <div class="col-1">
+              <input class="form-control" type="text" readonly>
+
+            </div>
+            <div class="col-1">
+              <input class="form-control " type="text" readonly>
+
+            </div>
+            <div class="col-1">
+              <h5>Raccoon Bonus</h5>
+            </div>
+            <div class="col-1">
+              <input class="form-control" type="text" readonly>
+
+            </div>
+          </div>
+        </section>
+        <section class="container-fluid ">
+          <div class="row align-items-center text-start">
+            <div class="col-3">
+              <div onclick="eatRabbit()" class="btn btn-light text-dark">500 🐍
+              </div>
+              <span>Rabbit +5</span>
+            </div>
+            <div class="col-3">
+              <div onclick="eatFox()" class="btn btn-light text-dark">6000 🐍
+              </div>
+              <span>Fox +60 </span>
+            </div>
+            <div class="col-1">
+              <input class="form-control " type="text" readonly>
+
+            </div>
+            <div class="col-1">
+              <h5>Rabbit Bonus</h5>
+            </div>
+            <div class="col-1">
+              <input class="form-control" type="text" readonly>
+
+            </div>
+            <div class="col-1">
+              <input class="form-control " type="text" readonly>
+
+            </div>
+            <div class="col-1">
+              <h5>Fox Bonus</h5>
+            </div>
+            <div class="col-1">
+              <input class="form-control" type="text" readonly>
+
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
     </div>
 
   </footer>
