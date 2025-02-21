@@ -47,6 +47,10 @@ function hatchEggs() {
   drawSnakes()
   drawSnakesLevel()
   drawTimerLevel()
+  drawMouseBonus()
+  drawRabbitBonus()
+  drawRaccoonBonus()
+  drawFoxBonus()
 }
 
 
@@ -86,24 +90,40 @@ function drawTimerLevel() {
   const timerPowerElem = document.getElementById('timerLevel')
   timerPowerElem.innerHTML = `<span class="mdi mdi-timer-sand"></span> ${autoTimer}`
 }
+function drawMouseLevel() {
+  const mouseLevelElem = document.getElementById('mouseLevel')
+  mouseLevelElem.innerHTML = `0`
+}
+function drawRabbitLevel() {
+  const rabbitLevelElem = document.getElementById('rabbitLevel')
+  rabbitLevelElem.innerHTML = `0`
+}
+function drawRaccoonLevel() {
+  const raccoonLevelElem = document.getElementById('raccoonLevel')
+  raccoonLevelElem.innerHTML = `0`
+}
+function drawFoxLevel() {
+  const foxLevelElem = document.getElementById('foxLevel')
+  foxLevelElem.innerHTML = `0`
+}
 function drawMouseBonus() {
   const mouseBonusElem = document.getElementById('mouseBonus')
-  mouseBonusElem.innerHTML = ``
+  mouseBonusElem.innerHTML = `0`
 
 }
 function drawRabbitBonus() {
   const rabbitBonusElem = document.getElementById('rabbitBonus')
-  rabbitBonusElem.innerHTML = ``
+  rabbitBonusElem.innerHTML = `0`
 
 }
 function drawRaccoonBonus() {
   const raccoonBonusElem = document.getElementById('raccoonBonus')
-  raccoonBonusElem.innerHTML = ``
+  raccoonBonusElem.innerHTML = `0`
 
 }
 function drawFoxBonus() {
   const foxBonusElem = document.getElementById('foxBonus')
-  foxBonusElem.innerHTML = ``
+  foxBonusElem.innerHTML = `0`
 
 }
 
