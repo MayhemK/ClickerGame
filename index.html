@@ -10,13 +10,16 @@
     integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
     defer></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
   <script id="debug-script" src="https://cdn.jsdelivr.net/gh/MickShannahan/style-debug@latest/debug.min.js"
     defer></script>
   <link rel="stylesheet" href="style.css">
   <title>Snake Clicker</title>
 </head>
 
-<body>
+<body class="metal-mania-regular">
   <header>
     <div class="container-fluid">
       <div class="row justify-content-center text-light">
@@ -30,7 +33,7 @@
     <div class="container-fluid">
       <div class="row text-center justify-content-center align-center">
         <div class="col-6">
-          <h1 class="btn fs-1" onclick="drawEggs()">🐍</h1>
+          <h1 class="btn fs-1" onclick="hatchEggs()">🐍</h1>
         </div>
       </div>
     </div>
@@ -38,6 +41,7 @@
   <footer>
 
   </footer>
+  <script src="app.js"></script>
 </body>
 
 </html>

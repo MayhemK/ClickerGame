@@ -1,12 +1,13 @@
 //SECTION - 
-let eggs = 0
+let snakes = 0
 
 //!SECTION
 
 
 //SECTION - 
-function drawEggs() {
-  console.log; eggs;
+function hatchEggs() {
+  snakes++
+  console.log
 }
 
 //!SECTION
