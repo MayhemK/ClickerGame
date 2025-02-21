@@ -86,6 +86,26 @@ function drawTimerLevel() {
   const timerPowerElem = document.getElementById('timerLevel')
   timerPowerElem.innerHTML = `<span class="mdi mdi-timer-sand"></span> ${autoTimer}`
 }
+function drawMouseBonus() {
+  const mouseBonusElem = document.getElementById('mouseBonus')
+  mouseBonusElem.innerHTML = ``
+
+}
+function drawRabbitBonus() {
+  const rabbitBonusElem = document.getElementById('rabbitBonus')
+  rabbitBonusElem.innerHTML = ``
+
+}
+function drawRaccoonBonus() {
+  const raccoonBonusElem = document.getElementById('raccoonBonus')
+  raccoonBonusElem.innerHTML = ``
+
+}
+function drawFoxBonus() {
+  const foxBonusElem = document.getElementById('foxBonus')
+  foxBonusElem.innerHTML = ``
+
+}
 
 
 //!SECTION
