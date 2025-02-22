@@ -45,9 +45,12 @@ function hatchEggs() {
   snakes += findTotalClick()
   drawEverything()
 }
-function checkLevel() {
-  console.log(clickUpgrades, autoUpgrades)
+function timerEggs() {
+  snakes += findAutoClick()
+  drawEverything()
+
 }
+
 function addClickUpgrade(indexNumber) {
   const upgradeLevel = clickUpgrades[indexNumber]
   upgradeLevel.level++
@@ -59,22 +62,6 @@ function addAutoUpgrade(indexNumber) {
   drawEverything()
 }
 
-function eatMouse() {
-  snakeLevel++
-  drawSnakesLevel()
-}
-function eatRabbit() {
-  snakeLevel += 5
-  drawSnakesLevel()
-}
-function eatRaccoon() {
-  autoTimer += 10
-  drawTimerLevel()
-}
-function eatFox() {
-  autoTimer += 60
-  drawTimerLevel()
-}
 
 function findBonus(indexNumber) {
   const sum = clickUpgrades[indexNumber].level * clickUpgrades[indexNumber].amount;
@@ -88,6 +75,30 @@ function findBonus2(indexNumber) {
 function findTotalClick() {
   const clickPower = findBonus(0) + findBonus(1) + 1
   return clickPower
+}
+function findAutoClick() {
+  const autoPower = findBonus2(0) + findBonus2(1)
+  return autoPower
+
+}
+
+function upgradesCost(indexNumber) {
+  const upgradeBuy = clickUpgrades[indexNumber].price
+  if (snakes < upgradeBuy) {
+    return 'lol'
+  } snakes -= clickUpgrades[indexNumber].price
+  snakeLevel += clickUpgrades[indexNumber].amount
+  clickUpgrades[indexNumber].level++
+  drawEverything()
+}
+function upgradesCost2(indexNumber) {
+  const upgradeBuy = autoUpgrades[indexNumber].price
+  if (snakes < upgradeBuy) {
+    return 'lol'
+  } snakes -= autoUpgrades[indexNumber].price
+  autoTimer += autoUpgrades[indexNumber].amount
+  autoUpgrades[indexNumber].level++
+  drawEverything()
 }
 
 //!SECTION
@@ -161,4 +172,6 @@ function drawEverything() {
   drawRaccoonLevel()
   drawFoxLevel()
 }
+
+setInterval(timerEggs, 3000);
 //!SECTION
