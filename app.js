@@ -50,19 +50,6 @@ function timerEggs() {
   drawEverything()
 
 }
-
-function addClickUpgrade(indexNumber) {
-  const upgradeLevel = clickUpgrades[indexNumber]
-  upgradeLevel.level++
-  drawEverything()
-}
-function addAutoUpgrade(indexNumber) {
-  const upgradeLevel = autoUpgrades[indexNumber]
-  upgradeLevel.level++
-  drawEverything()
-}
-
-
 function findBonus(indexNumber) {
   const sum = clickUpgrades[indexNumber].level * clickUpgrades[indexNumber].amount;
   return sum;
@@ -89,6 +76,7 @@ function upgradesCost(indexNumber) {
   } snakes -= clickUpgrades[indexNumber].price
   snakeLevel += clickUpgrades[indexNumber].amount
   clickUpgrades[indexNumber].level++
+
   drawEverything()
 }
 function upgradesCost2(indexNumber) {
@@ -100,6 +88,14 @@ function upgradesCost2(indexNumber) {
   autoUpgrades[indexNumber].level++
   drawEverything()
 }
+
+// function upgradePrice(indexNumber) {
+//   let newCost = 0
+//   const beforePrice = clickUpgrades[indexNumber].price * 0.05
+//   const newPrice = beforePrice * clickUpgrades[indexNumber].level
+//   newCost += newPrice + clickUpgrades[indexNumber].price
+//   return newCost
+// }
 
 //!SECTION
 
@@ -158,6 +154,12 @@ function drawFoxBonus() {
   foxBonusElem.innerText = `${sum}`
 
 }
+// function drawButtonValue(indexValue) {
+//   const upgradeButtonText = document.getElementById('mousePrice')
+//   // const newCost = upgradePrice(indexValue)
+//   upgradeButtonText.innerText = `${newCost} poop`
+
+// }
 
 function drawEverything() {
   drawSnakes()
@@ -171,7 +173,8 @@ function drawEverything() {
   drawRabbitLevel()
   drawRaccoonLevel()
   drawFoxLevel()
+  // drawButtonValue(0)
 }
 
-setInterval(timerEggs, 3000);
+// setInterval(timerEggs, 3000);
 //!SECTION
