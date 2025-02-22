@@ -4,7 +4,6 @@ let snakeLevel = 1
 let autoTimer = 0
 const clickUpgrades = [
   {
-    // @ts-ignore
     name: "Mice",
     price: 100,
     level: 0,
@@ -12,7 +11,6 @@ const clickUpgrades = [
     bonus: 0
   },
   {
-    // @ts-ignore
     name: "Rabbits",
     price: 500,
     level: 0,
@@ -23,7 +21,6 @@ const clickUpgrades = [
 
 const autoUpgrades = [
   {
-    // @ts-ignore
     name: "Raccoons",
     price: 1000,
     level: 0,
@@ -31,7 +28,6 @@ const autoUpgrades = [
     bonus: 0
   },
   {
-    // @ts-ignore
     name: "Foxes",
     price: 6000,
     level: 0,
@@ -46,7 +42,7 @@ const autoUpgrades = [
 //SECTION - 
 
 function hatchEggs() {
-  snakes++
+  snakes += findTotalClick()
   drawEverything()
 }
 function checkLevel() {
@@ -55,10 +51,12 @@ function checkLevel() {
 function addClickUpgrade(indexNumber) {
   const upgradeLevel = clickUpgrades[indexNumber]
   upgradeLevel.level++
+  drawEverything()
 }
 function addAutoUpgrade(indexNumber) {
   const upgradeLevel = autoUpgrades[indexNumber]
   upgradeLevel.level++
+  drawEverything()
 }
 
 function eatMouse() {
@@ -78,10 +76,19 @@ function eatFox() {
   drawTimerLevel()
 }
 
-function findBonus() {
-  const bonusAmount = clickUpgrades.findIndex((upgrade) => upgrade.level)
+function findBonus(indexNumber) {
+  const sum = clickUpgrades[indexNumber].level * clickUpgrades[indexNumber].amount;
+  return sum;
+}
+function findBonus2(indexNumber) {
+  const sum = autoUpgrades[indexNumber].level * autoUpgrades[indexNumber].amount;
+  return sum;
 }
 
+function findTotalClick() {
+  const clickPower = findBonus(0) + findBonus(1) + 1
+  return clickPower
+}
 
 //!SECTION
 
@@ -118,22 +125,26 @@ function drawFoxLevel() {
 }
 function drawMouseBonus() {
   const mouseBonusElem = document.getElementById('mouseBonus')
-  mouseBonusElem.innerText = `${clickUpgrades[0].bonus}`
+  const sum = findBonus(0);
+  mouseBonusElem.innerText = `${sum}`
 
 }
 function drawRabbitBonus() {
   const rabbitBonusElem = document.getElementById('rabbitBonus')
-  rabbitBonusElem.innerText = `${clickUpgrades[1].bonus}`
+  const sum = findBonus(1);
+  rabbitBonusElem.innerText = `${sum}`
 
 }
 function drawRaccoonBonus() {
   const raccoonBonusElem = document.getElementById('raccoonBonus')
-  raccoonBonusElem.innerText = `${autoUpgrades[0].bonus}`
+  const sum = findBonus2(0)
+  raccoonBonusElem.innerText = `${sum}`
 
 }
 function drawFoxBonus() {
   const foxBonusElem = document.getElementById('foxBonus')
-  foxBonusElem.innerText = `${autoUpgrades[1].bonus}`
+  const sum = findBonus2(1)
+  foxBonusElem.innerText = `${sum}`
 
 }
 
