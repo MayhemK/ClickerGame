@@ -5,50 +5,61 @@ let autoTimer = 0
 const clickUpgrades = [
   {
     // @ts-ignore
-    name: Mice,
+    name: "Mice",
     price: 100,
-    level: 69,
-    bonus: 1
+    level: 0,
+    amount: 1,
+    bonus: 0
   },
   {
     // @ts-ignore
-    name: Rabbits,
+    name: "Rabbits",
     price: 500,
-    level: 74,
-    bonus: 5,
-  }
-]
+    level: 0,
+    amount: 5,
+    bonus: 0
+  },
+];
 
-let autoUpgrades = [
+const autoUpgrades = [
   {
     // @ts-ignore
-    name: Raccoons,
+    name: "Raccoons",
     price: 1000,
-    level: 126,
-    bonus: 10
+    level: 0,
+    amount: 10,
+    bonus: 0
   },
   {
     // @ts-ignore
-    name: Foxes,
+    name: "Foxes",
     price: 6000,
-    level: 48092,
-    bonus: 60,
-  }
-]
+    level: 0,
+    amount: 60,
+    bonus: 0
+  },
+];
 
 //!SECTION
 
 
 //SECTION - 
+
 function hatchEggs() {
   snakes++
   drawEverything()
 }
-
-function increaseClick() {
-
+function checkLevel() {
+  console.log(clickUpgrades, autoUpgrades)
 }
-
+function addClickUpgrade(indexNumber) {
+  const upgradeLevel = clickUpgrades[indexNumber]
+  upgradeLevel.level++
+}
+function addAutoUpgrade(indexNumber) {
+  const upgradeLevel = autoUpgrades[indexNumber]
+  upgradeLevel.level++
+}
 
 function eatMouse() {
   snakeLevel++
@@ -59,12 +70,12 @@ function eatRabbit() {
   drawSnakesLevel()
 }
 function eatRaccoon() {
-  snakeLevel += 10
-  drawSnakesLevel()
+  autoTimer += 10
+  drawTimerLevel()
 }
 function eatFox() {
-  snakeLevel += 60
-  drawSnakesLevel()
+  autoTimer += 60
+  drawTimerLevel()
 }
 
 function findBonus() {
@@ -91,38 +102,38 @@ function drawTimerLevel() {
 }
 function drawMouseLevel() {
   const mouseLevelElem = document.getElementById('mouseLevel')
-  mouseLevelElem.innerText = `0`
+  mouseLevelElem.innerText = `${clickUpgrades[0].level}`
 }
 function drawRabbitLevel() {
   const rabbitLevelElem = document.getElementById('rabbitLevel')
-  rabbitLevelElem.innerText = `0`
+  rabbitLevelElem.innerText = `${clickUpgrades[1].level}`
 }
 function drawRaccoonLevel() {
   const raccoonLevelElem = document.getElementById('raccoonLevel')
-  raccoonLevelElem.innerText = `0`
+  raccoonLevelElem.innerText = `${autoUpgrades[0].level}`
 }
 function drawFoxLevel() {
   const foxLevelElem = document.getElementById('foxLevel')
-  foxLevelElem.innerText = `0`
+  foxLevelElem.innerText = `${autoUpgrades[1].level}`
 }
 function drawMouseBonus() {
   const mouseBonusElem = document.getElementById('mouseBonus')
-  mouseBonusElem.innerText = `0`
+  mouseBonusElem.innerText = `${clickUpgrades[0].bonus}`
 
 }
 function drawRabbitBonus() {
   const rabbitBonusElem = document.getElementById('rabbitBonus')
-  rabbitBonusElem.innerText = `0`
+  rabbitBonusElem.innerText = `${clickUpgrades[1].bonus}`
 
 }
 function drawRaccoonBonus() {
   const raccoonBonusElem = document.getElementById('raccoonBonus')
-  raccoonBonusElem.innerText = `0`
+  raccoonBonusElem.innerText = `${autoUpgrades[0].bonus}`
 
 }
 function drawFoxBonus() {
   const foxBonusElem = document.getElementById('foxBonus')
-  foxBonusElem.innerText = `0`
+  foxBonusElem.innerText = `${autoUpgrades[1].bonus}`
 
 }
 
