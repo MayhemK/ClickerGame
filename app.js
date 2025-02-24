@@ -48,7 +48,6 @@ function hatchEggs() {
 function timerEggs() {
   snakes += findAutoClick()
   drawEverything()
-
 }
 function findBonus(indexNumber) {
   const sum = clickUpgrades[indexNumber].level * clickUpgrades[indexNumber].amount;
@@ -58,7 +57,6 @@ function findBonus2(indexNumber) {
   const sum = autoUpgrades[indexNumber].level * autoUpgrades[indexNumber].amount;
   return sum;
 }
-
 function findTotalClick() {
   const clickPower = findBonus(0) + findBonus(1) + 1
   return clickPower
@@ -66,9 +64,7 @@ function findTotalClick() {
 function findAutoClick() {
   const autoPower = findBonus2(0) + findBonus2(1)
   return autoPower
-
 }
-
 function testMath(indexNumber) {
   const thing = (clickUpgrades[indexNumber].price * 0.05) * clickUpgrades[indexNumber].level
   const stuff = clickUpgrades[indexNumber].level + thing
@@ -83,7 +79,6 @@ function minusCost(indexNumber) {
   snakes -= item
   snakeLevel += clickUpgrades[indexNumber].amount
   clickUpgrades[indexNumber].level++
-  return item
 }
 function testMath2(indexNumber) {
   const thing = (autoUpgrades[indexNumber].price * 0.05) * autoUpgrades[indexNumber].level
@@ -99,8 +94,6 @@ function minusCost2(indexNumber) {
   snakes -= item
   autoTimer += autoUpgrades[indexNumber].amount
   autoUpgrades[indexNumber].level++
-  return item
-
 }
 
 //!SECTION
@@ -194,6 +187,7 @@ function drawEverything() {
   drawButtonPrice3()
   drawButtonPrice4()
 }
+
 drawEverything()
 setInterval(timerEggs, 3000);
 //!SECTION
