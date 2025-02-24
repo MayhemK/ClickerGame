@@ -1,5 +1,5 @@
 //SECTION - 
-let snakes = 12000
+let snakes = 0
 let snakeLevel = 1
 let autoTimer = 0
 const clickUpgrades = [
@@ -84,7 +84,6 @@ function minusCost(indexNumber) {
   snakeLevel += clickUpgrades[indexNumber].amount
   clickUpgrades[indexNumber].level++
   return item
-
 }
 function testMath2(indexNumber) {
   const thing = (autoUpgrades[indexNumber].price * 0.05) * autoUpgrades[indexNumber].level
@@ -98,7 +97,7 @@ function minusCost2(indexNumber) {
     return
   }
   snakes -= item
-  snakeLevel += autoUpgrades[indexNumber].amount
+  autoTimer += autoUpgrades[indexNumber].amount
   autoUpgrades[indexNumber].level++
   return item
 
@@ -196,5 +195,5 @@ function drawEverything() {
   drawButtonPrice4()
 }
 drawEverything()
-// setInterval(timerEggs, 3000);
+setInterval(timerEggs, 3000);
 //!SECTION
