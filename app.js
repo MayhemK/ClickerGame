@@ -75,8 +75,13 @@ function upgradesCost(indexNumber) {
     return 'lol'
   } snakes -= clickUpgrades[indexNumber].price
   snakeLevel += clickUpgrades[indexNumber].amount
+<<<<<<< HEAD
   clickUpgrades[indexNumber].level++
 
+=======
+  clickUpgrades[indexNumber].level++ 
+  
+>>>>>>> 7377d852fe3a92fe08f03fbe3fba8fed92eb6a9d
   drawEverything()
 }
 function upgradesCost2(indexNumber) {
@@ -87,6 +92,11 @@ function upgradesCost2(indexNumber) {
   autoTimer += autoUpgrades[indexNumber].amount
   autoUpgrades[indexNumber].level++
   drawEverything()
+}
+function increasePrice(indexNumber) {
+let upgradeBuy = (clickUpgrades[indexNumber].level + 1) * clickUpgrades[indexNumber].price
+  const percent = upgradeBuy * 0.05
+return percent
 }
 
 // function upgradePrice(indexNumber) {
@@ -154,12 +164,19 @@ function drawFoxBonus() {
   foxBonusElem.innerText = `${sum}`
 
 }
+<<<<<<< HEAD
 // function drawButtonValue(indexValue) {
 //   const upgradeButtonText = document.getElementById('mousePrice')
 //   // const newCost = upgradePrice(indexValue)
 //   upgradeButtonText.innerText = `${newCost} poop`
 
 // }
+=======
+function buttonMore()
+const priceElem = document.getElementById('buttonChange')
+const percent = increasePrice(0)
+priceElem.innerText = `${percent}`
+>>>>>>> 7377d852fe3a92fe08f03fbe3fba8fed92eb6a9d
 
 function drawEverything() {
   drawSnakes()
