@@ -12,6 +12,10 @@ body {
   transition: transform ease 0.5s
 }
 
+.lilguy {
+  max-height: 1px;
+}
+
 .metal-mania-regular {
   font-family: "Metal Mania", serif;
   font-weight: 400;
@@ -24,7 +28,7 @@ body {
 
 .box {
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-  transition: transform ease 0.5s, box-shadow ease 0.5s;
+  transition: transform ease 0.5s, box-shadow ease 0.2s;
 }
 
 .box:hover {
@@ -33,7 +37,7 @@ body {
 }
 
 .box:active {
-  box-shadow: 0px 5px 5px 5px orange;
+  box-shadow: -1px 1px 2px 3px orange;
 }
 
 .mainSnake:hover {
