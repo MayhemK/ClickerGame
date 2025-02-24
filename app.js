@@ -1,5 +1,5 @@
 //SECTION - 
-let snakes = 0
+let snakes = 12000
 let snakeLevel = 1
 let autoTimer = 0
 const clickUpgrades = [
@@ -69,43 +69,40 @@ function findAutoClick() {
 
 }
 
-function upgradesCost(indexNumber) {
-  const upgradeBuy = clickUpgrades[indexNumber].price
-  if (snakes < upgradeBuy) {
-    return 'lol'
-  } snakes -= clickUpgrades[indexNumber].price
+function testMath(indexNumber) {
+  const thing = (clickUpgrades[indexNumber].price * 0.05) * clickUpgrades[indexNumber].level
+  const stuff = clickUpgrades[indexNumber].level + thing
+  const item = stuff + clickUpgrades[indexNumber].price
+  return item
+}
+function minusCost(indexNumber) {
+  const item = testMath(indexNumber)
+  if (snakes < item) {
+    return
+  }
+  snakes -= item
   snakeLevel += clickUpgrades[indexNumber].amount
-<<<<<<< HEAD
   clickUpgrades[indexNumber].level++
+  return item
 
-=======
-  clickUpgrades[indexNumber].level++ 
-  
->>>>>>> 7377d852fe3a92fe08f03fbe3fba8fed92eb6a9d
-  drawEverything()
 }
-function upgradesCost2(indexNumber) {
-  const upgradeBuy = autoUpgrades[indexNumber].price
-  if (snakes < upgradeBuy) {
-    return 'lol'
-  } snakes -= autoUpgrades[indexNumber].price
-  autoTimer += autoUpgrades[indexNumber].amount
+function testMath2(indexNumber) {
+  const thing = (autoUpgrades[indexNumber].price * 0.05) * autoUpgrades[indexNumber].level
+  const stuff = autoUpgrades[indexNumber].level + thing
+  const item = stuff + autoUpgrades[indexNumber].price
+  return item
+}
+function minusCost2(indexNumber) {
+  const item = testMath2(indexNumber)
+  if (snakes < item) {
+    return
+  }
+  snakes -= item
+  snakeLevel += autoUpgrades[indexNumber].amount
   autoUpgrades[indexNumber].level++
-  drawEverything()
-}
-function increasePrice(indexNumber) {
-let upgradeBuy = (clickUpgrades[indexNumber].level + 1) * clickUpgrades[indexNumber].price
-  const percent = upgradeBuy * 0.05
-return percent
-}
+  return item
 
-// function upgradePrice(indexNumber) {
-//   let newCost = 0
-//   const beforePrice = clickUpgrades[indexNumber].price * 0.05
-//   const newPrice = beforePrice * clickUpgrades[indexNumber].level
-//   newCost += newPrice + clickUpgrades[indexNumber].price
-//   return newCost
-// }
+}
 
 //!SECTION
 
@@ -144,39 +141,42 @@ function drawMouseBonus() {
   const mouseBonusElem = document.getElementById('mouseBonus')
   const sum = findBonus(0);
   mouseBonusElem.innerText = `${sum}`
-
 }
 function drawRabbitBonus() {
   const rabbitBonusElem = document.getElementById('rabbitBonus')
   const sum = findBonus(1);
   rabbitBonusElem.innerText = `${sum}`
-
 }
 function drawRaccoonBonus() {
   const raccoonBonusElem = document.getElementById('raccoonBonus')
   const sum = findBonus2(0)
   raccoonBonusElem.innerText = `${sum}`
-
 }
 function drawFoxBonus() {
   const foxBonusElem = document.getElementById('foxBonus')
   const sum = findBonus2(1)
   foxBonusElem.innerText = `${sum}`
-
 }
-<<<<<<< HEAD
-// function drawButtonValue(indexValue) {
-//   const upgradeButtonText = document.getElementById('mousePrice')
-//   // const newCost = upgradePrice(indexValue)
-//   upgradeButtonText.innerText = `${newCost} poop`
-
-// }
-=======
-function buttonMore()
-const priceElem = document.getElementById('buttonChange')
-const percent = increasePrice(0)
-priceElem.innerText = `${percent}`
->>>>>>> 7377d852fe3a92fe08f03fbe3fba8fed92eb6a9d
+function drawButtonPrice() {
+  const buttonPrice = document.getElementById('mousePrice')
+  const item = testMath(0)
+  buttonPrice.innerHTML = `${item} <span>🐍</span>`
+}
+function drawButtonPrice2() {
+  const buttonPrice = document.getElementById('rabbitPrice')
+  const item = testMath(1)
+  buttonPrice.innerHTML = `${item} <span>🐍</span>`
+}
+function drawButtonPrice3() {
+  const buttonPrice = document.getElementById('raccoonPrice')
+  const item = testMath2(0)
+  buttonPrice.innerHTML = `${item} <span>🐍</span>`
+}
+function drawButtonPrice4() {
+  const buttonPrice = document.getElementById('foxPrice')
+  const item = testMath2(1)
+  buttonPrice.innerHTML = `${item} <span>🐍</span>`
+}
 
 function drawEverything() {
   drawSnakes()
@@ -190,8 +190,11 @@ function drawEverything() {
   drawRabbitLevel()
   drawRaccoonLevel()
   drawFoxLevel()
-  // drawButtonValue(0)
+  drawButtonPrice()
+  drawButtonPrice2()
+  drawButtonPrice3()
+  drawButtonPrice4()
 }
-
+drawEverything()
 // setInterval(timerEggs, 3000);
 //!SECTION
